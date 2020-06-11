@@ -8,7 +8,12 @@ import AppointmentsRepository from '../repositories/AppointmentsRepository';
 /* Service */
 import CreateAppointmentService from '../services/CreateAppointmentService';
 
+/* Middleware */
+import ensureAuthenticated from '../middlewares/ensureAuthenticated';
+
 const appointmentsRouter = Router();
+
+appointmentsRouter.use(ensureAuthenticated);
 
 /* Show all appointments */
 appointmentsRouter.get('/', async (request, response) => {
