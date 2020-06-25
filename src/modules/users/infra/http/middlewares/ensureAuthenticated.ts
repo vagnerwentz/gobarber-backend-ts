@@ -2,10 +2,10 @@ import { Request, Response, NextFunction } from 'express';
 import { verify } from 'jsonwebtoken';
 
 /* Authenticate config */
-import authConfig from '../config/auth';
+import authConfig from '@config/auth';
 
 /* Error */
-import AppError from '../errors/AppError';
+import AppError from '@shared/errors/AppError';
 
 interface TokenPayload {
   iat: number;

@@ -3,13 +3,13 @@ import { getCustomRepository } from 'typeorm';
 import { parseISO } from 'date-fns';
 
 /* Repository */
-import AppointmentsRepository from '../repositories/AppointmentsRepository';
+import AppointmentsRepository from '@modules/appointments/repositories/AppointmentsRepository';
 
 /* Service */
-import CreateAppointmentService from '../services/CreateAppointmentService';
+import CreateAppointmentService from '@modules/appointments/services/CreateAppointmentService';
 
 /* Middleware */
-import ensureAuthenticated from '../middlewares/ensureAuthenticated';
+import ensureAuthenticated from '@modules/users/infra/http/middlewares/ensureAuthenticated';
 
 const appointmentsRouter = Router();
 

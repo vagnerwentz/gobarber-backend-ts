@@ -3,13 +3,13 @@ import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 
 /* Authenticate config */
-import authConfig from '../config/auth';
-
-/* Model */
-import User from '../models/User';
+import authConfig from '@config/auth';
 
 /* Error */
-import AppError from '../errors/AppError';
+import AppError from '@shared/errors/AppError';
+
+/* Model */
+import User from '../infra/typeorm/entities/User';
 
 interface Request {
   email: string;
