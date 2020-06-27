@@ -9,6 +9,8 @@ import uploadConfig from '@config/upload';
 /* Error */
 import AppError from '@shared/errors/AppError';
 
+import '@shared/container';
+
 import routes from './routes';
 
 /* Database */
