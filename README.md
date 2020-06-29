@@ -25,22 +25,23 @@ docker run --name NAME -e POSTGRES_PASSWORD=PASSWORD -p 5432:5432 -d postgres
 
   # Open ormconfig.json and configure your database from type to database.
   {
-    "type": "",
-    "host": "",
-    "port": ,
-    "username": "",
-    "password": "",
-    "database": "",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "docker",
+    "database": "gostack_gobarber",
     "entities": [
-      "./src/models/*.ts"
+      "./src/modules/**/infra/typeorm/entities/*.ts"
     ],
     "migrations": [
-      "./src/database/migrations/*.ts"
+      "./src/shared/infra/typeorm/migrations/*.ts"
     ],
     "cli": {
-      "migrationsDir": "./src/database/migrations"
+      "migrationsDir": "./src/shared/infra/typeorm/migrations"
     }
   }
+
 
   # You need to generate the migrations.
   yarn typeorm migration:run
