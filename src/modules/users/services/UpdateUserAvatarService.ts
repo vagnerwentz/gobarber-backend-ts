@@ -1,20 +1,14 @@
-import path from 'path';
-import fs from 'fs';
 import { inject, injectable } from 'tsyringe';
-
-/* Upload config */
-import uploadConfig from '@config/upload';
 
 /* Error */
 import AppError from '@shared/errors/AppError';
 
 /* Model */
+import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
 import User from '../infra/typeorm/entities/User';
 
 /* Repository */
 import IUsersRepository from '../repositories/IUsersRepository';
-
-import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
 
 interface IRequest {
   user_id: string;
@@ -39,7 +33,7 @@ class UpdateUserAvatarService {
     }
 
     if (user.avatar) {
-     await this.storageProvider.deleteFile(user.avatar);
+      await this.storageProvider.deleteFile(user.avatar);
     }
 
     const filename = await this.storageProvider.saveFile(avatarFilename);
