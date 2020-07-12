@@ -19,6 +19,8 @@ Dbeaver it is the program that I used to see my database.
 ### Creating the containers 🐋
 ```
 docker run --name NAME -e POSTGRES_PASSWORD=PASSWORD -p 5432:5432 -d postgres
+docker run --name mongodb -p 27017:27017 -d -t mongo
+docker run --name redis -p 6379:6379 -d -t redis:alpine
 
   # To on your container, open the terminal and write.
   docker container start NAME
