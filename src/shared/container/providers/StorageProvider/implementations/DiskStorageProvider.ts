@@ -15,12 +15,11 @@ class DiskStorageProvider implements IStorageProvider {
     return file;
   }
 
-
   public async deleteFile(file: string): Promise<void> {
     const filePath = path.resolve(uploadConfig.uploadsFolder, file);
 
     try {
-      await fs.promises.stat(filePath)
+      await fs.promises.stat(filePath);
     } catch {
       return;
     }
