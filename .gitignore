@@ -1,8 +1,8 @@
 /node_modules
+ormgconfig.json
 /.vscode
 tmp/*
 !tmp/.gitkeep
 /coverage
 .env
-ormgconfig.json
 dist
