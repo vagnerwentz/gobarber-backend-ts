@@ -5,3 +5,4 @@ tmp/*
 /coverage
 .env
 ormgconfig.json
+dist
