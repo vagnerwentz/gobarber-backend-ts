@@ -60,7 +60,7 @@ jobs:
           ./node_mobules/.bin/typeorm migration:run
       
     # Restart no servidor Node.js
-    - name: Run migrations on Digital Ocean
+    - name: Restart Node.js Server
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SSH_HOST }}
